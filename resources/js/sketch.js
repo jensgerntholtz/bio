@@ -6,26 +6,37 @@ var boxIDs = {};
 var boxVals = {};
 
 function setup() {
-  var canvas = createCanvas(100, 100);
+  var canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0,0);
   angleMode(DEGREES);
-  resizeCanvas(windowWidth, windowHeight);
   for (var i = 0; i < document.querySelectorAll('.wrapper .box').length; i++) {
     document.getElementsByClassName('box')[i].id = 'box'+i;
     document.getElementsByClassName('rating')[i].id = 'rating'+i;
     boxIDs['boxIDs'+i] = document.getElementById("box"+i);
     boxVals['boxVal'+i] = (document.getElementById("rating"+i).innerHTML)*360/5;
+  }
     // var endi = boxVal*360/5;
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+function scrollon() {
+  clear();
+}
+function draw() {
+  clear();
+  for (var i = 0; i < document.querySelectorAll('.wrapper .box').length; i++) {
     if (i!=0) {
       var j = i-1;
       preBoxPos['boxPos' + i] = boxIDs['boxIDs'+j].getBoundingClientRect();
       boxPos['boxPos' + i]= boxIDs['boxIDs'+i].getBoundingClientRect();
-      translate(boxPos['boxPos' + i].left-preBoxPos['boxPos' + i].left,boxPos['boxPos' + i].bottom-preBoxPos['boxPos' + i].bottom);
+      translate(boxPos['boxPos' + i].left-preBoxPos['boxPos' + i].left,boxPos['boxPos' + i].top-preBoxPos['boxPos' + i].top);
     }
     else {
       boxPos['boxPos' + i]= boxIDs['boxIDs'+i].getBoundingClientRect();
-      translate(boxPos['boxPos' + i].left,boxPos['boxPos' + i].bottom-200);
-      console.log(boxPos['boxPos' + i].left+','+boxPos['boxPos' + i].bottom-200);
+      translate(boxPos['boxPos' + i].left,boxPos['boxPos' + i].top);
+      console.log(boxPos['boxPos' + i].left+','+boxPos['boxPos' + i].top);
     }
     // translate(windowWidth/2, windowHeight/2)
     // rotate(-90);
@@ -36,16 +47,6 @@ function setup() {
     stroke(241, 196, 15);
     // scale out of 5 over 360 degrees
     var arc1 = arc(100, 100, 160, 160, -90, boxVals['boxVal'+i]-91);
-    window.onscroll = function() {scrollon()};
   }
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-function scrollon() {
-  clear();
-}
-function draw() {
-
+  window.onscroll = function() {scrollon()};
 }
