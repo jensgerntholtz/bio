@@ -90,4 +90,10 @@ html body{
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
+  padding: 2em;
+  text-align: center;
+}
+.rating {
+  font-size: 200%;
+
 }
