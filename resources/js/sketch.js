@@ -5,7 +5,7 @@ var boxVals = {};
 var boxCount = {};
 
 function setup() {
-  var canvas = createCanvas(windowWidth, windowHeight+150);
+  var canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   angleMode(DEGREES);
   for (var i = 0; i < document.querySelectorAll('.wrapper .box').length; i++) {
