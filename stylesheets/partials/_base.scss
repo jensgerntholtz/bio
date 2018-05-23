@@ -1,0 +1,43 @@
+$color-primary : #212121;
+$color-secondary : #fdd835;
+$padding: 15rem;
+
+body {
+  font-family: tahoma;
+  background: $color-primary;
+  color: white;
+  padding: 10rem $padding;
+  justify-content: center;
+}
+.main {
+  display: grid;
+  padding: 2rem;
+  color: black;
+  width: 60rem;
+  background: white;
+  justify-items: center;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.5rem;
+  height: 37rem;
+  width: 45rem;
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+.card {
+  margin-top: 15rem*0.03/2;
+  width: 10rem;
+  height: 13rem;
+  background: lighten($color-primary, 3);
+  color: darken(desaturate($color-secondary, 50),10);
+  border-style: solid;
+  border-width: 0.05rem;
+  padding: 2rem;
+  box-shadow: 0px 0px 1.5rem 5px rgba(darken($color-primary, 3), 0.4);
+  &:hover{
+      color: $color-secondary;
+  }
+}
