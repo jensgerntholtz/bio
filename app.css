@@ -138,6 +138,8 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 4rem 5fr;
   height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
   font-synthesis: none;
   font-feature-settings: "tnum";
   font-variant-caps: all-small-;
@@ -249,6 +251,7 @@ button.sharp-button:before {
   display: grid;
   grid-template-columns: 1fr;
   padding: 1rem 27%;
+  /* grid-auto-flow: column; */
 }
 
 .avatar-container {
