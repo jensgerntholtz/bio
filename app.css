@@ -139,6 +139,7 @@ body {
   align-items: stretch;
   grid-template-columns: 1fr;
   grid-template-rows: 4rem 5fr;
+  width: 100vw;
   height: 100vh;
   max-height: 100vh;
   overflow-y: auto;
