@@ -343,4 +343,8 @@ li {
   .card__image {
     margin-bottom: 2rem;
   }
+
+  .compressed-caption {
+    white-space: normal;
+  }
 }
