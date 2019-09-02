@@ -23,16 +23,7 @@ var player = new Path.Rectangle({
 	fillColor: 'black'
 });
 
-var redPath = new Path.Rectangle({
-	size: [10, 10],
-	fillColor: 'red'
-});
-
-var redSymbol = new Symbol(redPath);
-
 var tempo = 10;
-var ahead = player.position.y + tempo;
-var ahead2 = ahead / 2;
 
 function onFrame(event) {
 	for (var i = 0; i < count; i++) {
