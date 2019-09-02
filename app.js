@@ -23,7 +23,16 @@ var player = new Path.Rectangle({
 	fillColor: 'black'
 });
 
-var tempo = 50;
+var redPath = new Path.Rectangle({
+	size: [10, 10],
+	fillColor: 'red'
+});
+
+var redSymbol = new Symbol(redPath);
+
+var tempo = 5;
+var ahead = player.position.y + tempo;
+var ahead2 = ahead / 2;
 
 function onFrame(event) {
 	for (var i = 0; i < count; i++) {
@@ -35,9 +44,9 @@ function onFrame(event) {
 			item.position.y = -item.bounds.height;
 		}
 
-
 		if (player.intersects(item)) {
-
+			var playerDistance = player.position.getDistance(item.position)
+			player.position.x += playerDistance / (player.position.x - item.position.x);
 			// 		    var center
 			// 		    console.log(view.center.x - player.position.x)
 			// 		    if(view.center.x - player.position.x > 0) {
