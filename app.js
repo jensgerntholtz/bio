@@ -7,7 +7,7 @@ var path = new Path.Rectangle({
 
 var symbol = new Symbol(path);
 var max = 2;
-var min = 0.5;
+var min = 1;
 
 // Place the instances of the symbol:
 for (var i = 0; i < count; i++) {
@@ -19,7 +19,7 @@ for (var i = 0; i < count; i++) {
 
 var player = new Path.Rectangle({
 	point: view.center,
-	size: [100, 100],
+	size: [80, 100],
 	fillColor: 'black'
 });
 
@@ -30,7 +30,7 @@ var redPath = new Path.Rectangle({
 
 var redSymbol = new Symbol(redPath);
 
-var tempo = 5;
+var tempo = 10;
 var ahead = player.position.y + tempo;
 var ahead2 = ahead / 2;
 
@@ -46,14 +46,8 @@ function onFrame(event) {
 
 		if (player.intersects(item)) {
 			var playerDistance = player.position.getDistance(item.position)
+
 			player.position.x += playerDistance / (player.position.x - item.position.x);
-			// 		    var center
-			// 		    console.log(view.center.x - player.position.x)
-			// 		    if(view.center.x - player.position.x > 0) {
-			// 		        player.position.x +=  10;
-			// 		    } else {
-			// 		        player.position.x -=  10;
-			// 		    }
 		}
 
 	}
