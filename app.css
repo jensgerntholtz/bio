@@ -51,6 +51,7 @@ body {
 .vector-icon {
   height: 100%;
   width: 100%;
+  fill: currentColor;
 }
 
 .bg-dot-pattern {
