@@ -48,6 +48,11 @@ body {
   background: var(--primary-color);
 }
 
+.vector-icon {
+  height: 100%;
+  width: 100%;
+}
+
 .bg-dot-pattern {
   background: radial-gradient(circle at center, #999 1px, transparent 1px);
   background-size: 50px 50px;
