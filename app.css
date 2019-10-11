@@ -48,6 +48,11 @@ body {
   background: var(--primary-color);
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 .vector-icon {
   height: 100%;
   width: 100%;
@@ -263,10 +268,45 @@ button.sharp-button:before {
 }
 
 .avatar-container {
+  position: relative;
   background-color: #434342;
   width: 10rem;
   height: 10rem;
   margin-right: 1rem;
+  user-select: none;
+  /* border-radius: 50%;
+  border: 1px solid white;
+  overflow: hidden; */
+}
+
+.avatar-container::after, .avatar-container::before {
+  --border-offset: 4%;
+  --border-length: 1rem;
+  --border-girth: 1px;
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  top: calc(var(--border-offset) * -1);
+  left: calc(var(--border-offset) * -1);
+  width: calc(100% + calc(var(--border-offset) * 2));
+  height: calc(100% + calc(var(--border-offset) * 2));
+  border: var(--border-girth) dashed white;
+  border-image: repeating-linear-gradient(to left, #ffffff, var(--border-length), transparent var(--border-length), transparent calc(100% - var(--border-length)),#ffffff calc(100% - var(--border-length))) 10 0 10 0;
+  transition: .2s ease-out;
+}
+
+.avatar-container:hover::after, .avatar-container:hover::before {
+  /* top: calc(var(--border-girth) / -2);
+  left: calc(var(--border-girth) / -2); */
+  box-sizing: content-box;
+  top: calc(var(--border-girth) * -1);
+  left: calc(var(--border-girth) * -1);
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-container::before {
+  transform: rotate(90deg)
 }
 
 .flex {
