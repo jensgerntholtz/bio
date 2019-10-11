@@ -295,18 +295,16 @@ button.sharp-button:before {
   transition: .2s ease-out;
 }
 
+.avatar-container::before {
+  border-image: repeating-linear-gradient(to top, #ffffff, var(--border-length), transparent var(--border-length), transparent calc(100% - var(--border-length)),#ffffff calc(100% - var(--border-length))) 0 10 0 10;
+}
+
 .avatar-container:hover::after, .avatar-container:hover::before {
-  /* top: calc(var(--border-girth) / -2);
-  left: calc(var(--border-girth) / -2); */
   box-sizing: content-box;
   top: calc(var(--border-girth) * -1);
   left: calc(var(--border-girth) * -1);
   width: 100%;
   height: 100%;
-}
-
-.avatar-container::before {
-  transform: rotate(90deg)
 }
 
 .flex {
